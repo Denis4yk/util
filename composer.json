@@ -1,0 +1,29 @@
+{
+    "name": "tod/utils",
+    "description": "Library with usefull tools.",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["php", "utility", "collection", "helpers"],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Denis Riabiy",
+            "email": "riabiy.denis@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.7.5"
+    },
+    "autoload": {
+        "psr-0": {"utils\\": "src/"}
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Denis4yk/util"
+        }
+    ]
+}
