@@ -24,4 +24,24 @@ class arraysTest extends TestCase
         $array = [4 => 1, 2 => 2, 8 => 3];
         $this->assertEquals([0 => 1, 1 => 2], arrays::getFirst($array, 2, ['preserveKeys' => false]));
     }
+
+
+    public function testNotEmpty()
+    {
+        $array = ['a' => null];
+        $this->assertFalse(arrays::notEmpty($array));
+        $this->assertTrue(arrays::notEmpty($array, true));
+
+        $array = [1, 2, 3];
+        $this->assertTrue(arrays::notEmpty($array));
+
+        $array = [1, 'soma' => ['a' => null], 3];
+        $this->assertTrue(arrays::notEmpty($array));
+
+        $array = [1, ''];
+        $this->assertFalse(arrays::notEmpty($array));
+
+        $array = [1, 0];
+        $this->assertFalse(arrays::notEmpty($array));
+    }
 }
