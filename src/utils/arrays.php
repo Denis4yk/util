@@ -44,14 +44,14 @@ class arrays
      *
      * @return bool
      */
-    public static function notEmpty(array $array, $reverse = false, array $options = [])
+    public static function notEmpty(array $array, array $options = [])
     {
         foreach ($array as $item) {
             if (empty($item)) {
-                return $reverse ? true : false;
+                return false;
             }
         }
 
-        return $reverse ? false : true;
+        return true;
     }
 }

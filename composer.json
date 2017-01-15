@@ -1,7 +1,7 @@
 {
     "name": "tod/utils",
     "description": "Library with usefull tools.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "type": "library",
     "keywords": ["php", "utility", "collection", "helpers"],
     "license": "proprietary",

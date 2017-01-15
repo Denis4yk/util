@@ -30,7 +30,6 @@ class arraysTest extends TestCase
     {
         $array = ['a' => null];
         $this->assertFalse(arrays::notEmpty($array));
-        $this->assertTrue(arrays::notEmpty($array, true));
 
         $array = [1, 2, 3];
         $this->assertTrue(arrays::notEmpty($array));
