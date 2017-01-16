@@ -29,6 +29,19 @@ class arrays
     }
 
 
+    //TODO write documentation, throw exception, maybe
+    public static function getLast(array $array, $n = 1, array $options = ['preserveKeys' => false])
+    {
+        if ($array !== null) {
+            return array_slice($array, -$n, $n, $options['preserveKeys']);
+        } else {
+            return null;
+        }
+    }
+
+
+    //TODO add to documentation about false and add links to used functions
+
     /**
      * Receives an array of values and returns true, if none of the first-level items are empty.
      *
@@ -38,9 +51,7 @@ class arrays
      * [['some' => null]] - NOT empty
      *
      * @param array $array   Input array
-     * @param bool  $reverse If it's true, it will work vice versa. Default value is false.
      * @param array $options Additional options
-     *
      *
      * @return bool
      */

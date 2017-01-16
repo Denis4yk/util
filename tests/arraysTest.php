@@ -25,6 +25,22 @@ class arraysTest extends TestCase
         $this->assertEquals([0 => 1, 1 => 2], arrays::getFirst($array, 2, ['preserveKeys' => false]));
     }
 
+    //TODO make normal exception handling
+    public function testGetLast()
+    {
+        $array  = [1 => 1, 2, 2 => 3, 4];
+        $result = [3, 4];
+        $this->assertEquals($result, arrays::getLast($array, 2));
+
+        $array = null;
+        try {
+            arrays::getLast($array, 2);
+            $this->fail('No exception');
+        } catch (\PHPUnit_Framework_Error $exception) {
+            $this->expectException(\Exception::class);
+        }
+    }
+
 
     public function testNotEmpty()
     {
