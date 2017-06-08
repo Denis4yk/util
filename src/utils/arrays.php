@@ -1,4 +1,5 @@
 <?php
+
 namespace utils;
 
 /**
@@ -100,5 +101,19 @@ class arrays
         }
 
         return $array;
+    }
+
+    /**
+     * Receives an array and returns it with exclueded nulls
+     *
+     * @param array $array Input array
+     *
+     * @return array without nulls
+     */
+    public static function clearNulls(array $array)
+    {
+        return array_filter($array, function ($value) {
+            return !is_null($value);
+        });
     }
 }

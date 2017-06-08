@@ -54,7 +54,6 @@ class arraysTest extends TestCase
         $this->assertEquals([2 => 2, 8 => 3], arrays::getLast($array, 2, ['preserveKeys' => true]));
     }
 
-
     public function testNotEmpty()
     {
         $array = ['a' => null];
@@ -122,5 +121,19 @@ class arraysTest extends TestCase
         $excludedKeys = [7, 2];
         $result       = [6 => 'some', 8 => 6];
         $this->assertEquals($result, arrays::getArrayExceptKeys($array, $excludedKeys));
+    }
+
+    public function testClearNulls()
+    {
+        $array  = ['some', 'else', 0, '', false, null];
+        $result = ['some', 'else', 0, '', false];
+        $this->assertEquals($result, arrays::clearNulls($array));
+
+        try {
+            arrays::clearNulls('string');
+            $this->expectException(\InvalidArgumentException::class);
+            $this->fail('No exception');
+        } catch (\Exception $exception) {
+        }
     }
 }
